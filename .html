@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Revisão de Arrys</title>
+</head>
+<body>
+    <h1>Console do Navegador</h1>
+    <script>
+        let produtos = ["teclado", "mouse", "monitor", "gabinete"];
+
+        // Mostrar todos os produtos
+        produtos.forEach((p, i)=>{
+            console.log(`${i + 1} - ${p}`);
+        });
+        
+        // Filtrar produtos com mais de 6 letras
+        let filtrados = produtos.filter(p => p.length > 6);
+        console.log("Produtos com mais de 6 letras:");
+
+        //Mostrar as palavras em maiúsculo
+        let maiusculo = produtos.map(p => p.toUpperCase());
+        console.log(maiusculo);
+
+        //Mostrar as palavras que começam com "m"
+        let comM = produtos.filter(p => p.startsWith("m"));
+        console.log(comM);
+
+        //Mostrar a quantidade de letras com "m"
+        let comecaComM = produtos.reduce((acc, p) => {
+        
+        
+    </script>    
+</body>
+</html>
