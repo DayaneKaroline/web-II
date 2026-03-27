@@ -1,7 +1,6 @@
-const validarUsuario = (req, res, next) => {
+const validarUsuario = (req, res) => {
     const { nome, email, idade } = req.body;
-    const erros = [];
-
+    
     //validação do nome 
     if(!nome){
         return res.status(400).json({
@@ -19,14 +18,14 @@ const validarUsuario = (req, res, next) => {
     }
 
     //validação da idade
-    if(!idade || idade >= 18){
+    if(!idade || idade < 18){
         return res.status(400).json({
             success: false,
             error: "Idade inválida"
         });
     }
     // Se tudo estiver correto 
-    return res.status(200).json({
+    return res.status(201).json({
         success: true,
         message: "Usuário válido",
         data: {nome, email, idade}

@@ -1,11 +1,7 @@
 const express = require('express');
-const app = express();
+const router = express.Router();
+const validarUsuarioControllers = require('./src/controllers/validarUsuarioControllers');
 
-const validarUsuarioRouter = require('./routes/validarUsuario');
-app.use('/validar-usuario', validarUsuarioRouter);
+router.post('/', validarUsuarioControllers.validarUsuario);
 
-app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
-});
-
-module.exports = app;
+module.exports = router;
